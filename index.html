@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container" id="main-content" role="main">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active" role="region" aria-label="Welcome Screen">
+            <h1>Welcome to Tech Quiz</h1>
+            <div class="input-group">
+                <label for="player-name" class="visually-hidden">Enter your name</label>
+                <input type="text" id="player-name" placeholder="Enter your name" aria-required="true">
+                <button id="start-quiz" aria-label="Start Quiz">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen" role="region" aria-label="Quiz Screen">
+            <div class="quiz-header">
+                <div class="player-info" aria-live="polite">
+                    <span id="player-name-display"></span>
+                    <span id="score-display" aria-label="Current Score">Score: 0</span>
+                </div>
+                <div class="progress-info">
+                    <div class="progress-text" aria-live="polite">
+                        Question <span id="current-question">1</span>/10
+                    </div>
+                    <div class="progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text" aria-live="polite"></h2>
+                <div class="options-container" role="group" aria-labelledby="question-text">
+                    <button class="option"></button>
+                    <button class="option"></button>
+                    <button class="option"></button>
+                    <button class="option"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen" role="region" aria-label="Result Screen">
+            <h2>Quiz Complete!</h2>
+            <div id="final-score" aria-live="polite"></div>
+            <div id="performance-message" aria-live="polite"></div>
+            <button id="play-again" aria-label="Play Again">Play Again</button>
+        </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
